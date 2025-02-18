@@ -4,7 +4,7 @@ config-version: 2
 
 profile: 's3_snowflake'
 
-model-paths: ["models"]  # Ensures dbt looks inside 'models/'
+model-paths: ["s3_snowflake/models"]  # ✅ Update path to match the current structure
 test-paths: ["tests"]
 seed-paths: ["seeds"]
 analysis-paths: ["analyses"]
@@ -18,6 +18,5 @@ clean-targets:
 
 models:
   s3_snowflake_elt:
-    +materialized: table
-    staging:  # Ensure this matches your folder structure
-      +schema: staging
+    staging:  # ✅ Matches your 'staging/' folder inside 'models/'
+      +materialized: table
