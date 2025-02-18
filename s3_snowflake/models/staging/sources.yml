@@ -1,8 +1,23 @@
 version: 2
 
 sources:
-  - name: raw
+  - name: raw_s3
     database: test_db
-    schema: raw
+    schema: test
     tables:
-      - name: patients
+      - name: patient_data
+
+models:
+  - name: transformed_patient_data
+    description: "Cleaned and transformed patient data"
+    columns:
+      - name: patient_id
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        tests:
+          - not_null
+      - name: dob
+        tests:
+          - not_null
