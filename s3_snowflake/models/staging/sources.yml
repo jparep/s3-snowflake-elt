@@ -5,7 +5,7 @@ sources:
     database: test_db
     schema: test
     tables:
-      - name: patient_data
+      - name: tbl
 
 models:
   - name: transformed_patient_data
