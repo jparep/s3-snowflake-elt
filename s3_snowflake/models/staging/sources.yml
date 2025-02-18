@@ -5,7 +5,7 @@ sources:
     database: test_db
     schema: test
     tables:
-      - name: tbl
+      - name: tbl  # Ensure this matches the real table name in Snowflake
 
 models:
   - name: transformed_patient_data
